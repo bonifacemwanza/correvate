@@ -1,27 +1,55 @@
-# Exercise
+# Recruitment Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
 
-## Development server
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](#)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### angular test description
+Create an Angular app which accesses the Swagger pet shop Rest API back-end running
+locally and provides the following functionality:
+1. Login page
+2. Page to create a pet (image, name, status)
+3. Page to list all the pets for a given status. For each pet in the list display name, status
+a. When clicking on the pet in the list, the pet details should be displayed in a
+modal using Angular Material.
+4. BONUS: Implement a Redux pet state using NgXs
+Please provide the code of the Angular app with relevant unit tests.
+Note: The design is up to you but please provide an organised page layout.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Things which could be improved from this solution
 
-## Build
+- Error handling could be done better alerts
+- The use of reactive-forms for better validation and observable sunscriptions
+- Write some more UI tests to cover alot of the features implements
+- Much more Better implementation of RxJs and Ngxs
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+Pull from the source code from the repo  ```https://github.com/bonifacemwanza/correvate.git```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install the dependencies and devDependencies and start the server.
 
-## Further help
+```sh
+cd correvate
+npm install
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Docker
+
+To configure the back end for this app you need to pull the petstore/swagger to your local enviroment by running the commands below
+
+```sh
+docker pull swaggerapi/petstore
+docker run -d -e SWAGGER_HOST=http://petstore.swagger.io \
+  -e SWAGGER_URL=http://localhost \
+  -e SWAGGER_BASE_PATH=/v2 -p 80:8080 swaggerapi/petstore
+```
+
+For more information check out the petstore-swagger docker link (https://hub.docker.com/r/swaggerapi/petstore)
+
+By: Boniface C Mwanza
+
+
