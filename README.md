@@ -15,6 +15,21 @@ modal using Angular Material.
 Please provide the code of the Angular app with relevant unit tests.
 Note: The design is up to you but please provide an organised page layout.
 
+### Screenshots
+
+Login Page
+![alt text](src/assets/screenshots/login.png)
+Create User/Edit
+![alt text](src/assets/screenshots/register.png)
+Home page
+![alt text](src/assets/screenshots/homescreen.png)
+Edit page
+![alt text](src/assets/screenshots/createpet.png)
+View Modal
+![alt text](src/assets/screenshots/viewpet.png)
+Filter Modal
+![alt text](src/assets/screenshots/filter.png)
+
 
 ## Things which could be improved from this solution
 
