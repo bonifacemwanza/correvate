@@ -6,6 +6,7 @@ import {
   UserLogin,
 } from "src/app/models/proflie.model";
 import { catchError, Observable, throwError } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -18,7 +19,7 @@ export class AuthService {
 
   createUser(data: CreateProfile): Observable<any> {
     return this.http
-      .request<any>("post", this.BASE_URL + this.createUserEndpoint, {
+      .request<any>("post", environment.apiUrl+'/v2' + this.createUserEndpoint, {
         body: data,
       })
       .pipe(
@@ -30,7 +31,7 @@ export class AuthService {
   loginUser(data: UserLogin): Observable<any> {
     return this.http
       .get<any>(
-        this.BASE_URL + this.createUserEndpoint + this.loginUserEndpoint,
+        environment.apiUrl+'/v2' + this.createUserEndpoint + this.loginUserEndpoint,
         { params: data as any }
       )
       .pipe(
@@ -42,7 +43,7 @@ export class AuthService {
   getUser(data:string): Observable<any> {
     return this.http
       .get<any>(
-        this.BASE_URL + this.createUserEndpoint  +'/'+data
+        environment.apiUrl+'/v2'+ this.createUserEndpoint  +'/'+data
       )
       .pipe(
         catchError((error) => {
