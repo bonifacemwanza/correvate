@@ -42,16 +42,6 @@ Filter Modal
 
 ## Installation
 
-Pull from the source code from the repo  ```https://github.com/bonifacemwanza/correvate.git```
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-cd correvate
-npm install
-ng serve
-```
-
 ## Docker
 
 To configure the back end for this app you need to pull the petstore/swagger to your local enviroment by running the commands below
@@ -64,6 +54,19 @@ docker run -d -e SWAGGER_HOST=http://petstore.swagger.io \
 ```
 
 For more information check out the petstore-swagger docker link (https://hub.docker.com/r/swaggerapi/petstore)
+
+## Angular Front End APP
+
+Pull from the source code from the repo  ```https://github.com/bonifacemwanza/correvate.git```
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+cd correvate
+npm install
+ng serve
+```
+
 
 By: Boniface C Mwanza
 
