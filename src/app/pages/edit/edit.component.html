@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="form">
+        <p class="header">Edit Pet</p>
+        <div class="form_fields">
+            <div>
+                <label for="pet_name">Pet Name</label>
+                <input type="text" id="pet_name" [(ngModel)]="name">
+            </div>
+            <div>
+                <label for="pet_status">Pet Status</label>
+                <select name="" id="pet_status" [(ngModel)]="status" >
+                    <option value="available">Available</option>
+                    <option value="pending">Pending</option>
+                    <option value="sold">Sold</option>
+                </select>
+            </div>
+            <label for="pet_desc">Pet Images</label>
+            <div class="images">
+                <label class="img" for="pet_pic">
+                    <i class="material-icons" style="font-size:27px;" >upload</i>
+                    <p>Upload image</p>
+                </label>
+                <input type="file" accept="image/*" id="pet_pic" (change)="CreateBase64String($event)" hidden>
+                <div class="img" *ngFor="let image of images; let i=index;">
+                    <button class="delete_image" (click)="deleteImage(i)">
+                        <i class="material-icons" style="font-size:17px;" >delete</i>
+                    </button>
+                    <img [src]="image" [alt]="name" >
+                </div>
+            </div>
+            
+        </div>
+        <div style="display: flex; flex-direction:column; padding: 5px">
+            <button class="main_btn" (click)="editPet()">Save Changes</button>
+        </div>
+    </div>
+</div>

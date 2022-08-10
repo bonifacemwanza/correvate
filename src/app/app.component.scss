@@ -1,0 +1,40 @@
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    color: #333;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    justify-content: space-between;
+    font-size: 17px;
+    z-index: 3;
+}
+.toolbar > div{
+    display: flex;
+    align-items: center;
+}
+.toolbar p{
+    margin-bottom: 0;
+}
+.toolbar i{
+    color: #ffafbd !important;
+}
+.toolbar a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toolbar a:hover{
+    background: linear-gradient(-135deg, #ffc3a0, #ffafbd);
+    color: rgb(255, 255, 255);
+}

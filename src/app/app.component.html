@@ -1,0 +1,13 @@
+<div class="toolbar" role="banner">
+  <div>
+    <i class="material-icons" style="margin-right: 10px; font-size:30px;">pets</i>
+    <p>Pet Shelter</p>
+  </div>
+  <div>
+    <a routerLink="/pets">Pets</a>
+    <a routerLink="/create" *ngIf="(profile)">Create</a>
+    <a routerLink="/" *ngIf="!(profile)">Login</a>
+    <a (click)="account.logout()" *ngIf="(profile)">Logout</a>
+  </div>
+</div>
+<router-outlet></router-outlet>

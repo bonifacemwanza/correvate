@@ -1,0 +1,62 @@
+<div class="container">
+    <span *ngIf="errors.length !== 0">
+        <div class="alert alert-danger error_log" role="alert">
+           <p *ngFor="let error of errors"> {{error}}</p>
+        </div>
+    </span>
+ 
+    <div class="form" *ngIf="login_tab">
+        <p class="header">Login</p>
+        <div class="form_fields">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" [(ngModel)]="loginDetails.username">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)]="loginDetails.password">
+            </div>
+        </div>
+        <div style="display: flex; flex-direction:column; padding: 5px">
+            <button class="main_btn" (click)="login()">Login</button>
+            <button class="other_btn" (click)="login_tab = !login_tab">Create Account</button>
+        </div>
+    </div>
+    <div class="form" *ngIf="!login_tab">
+        <p class="header">Create Account</p>
+        <div class="form_fields">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" [(ngModel)]="registerDetails.username" id="username">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" [(ngModel)]="registerDetails.email" id="email">
+            </div>
+            <div>
+                <label for="firstname">Firstname</label>
+                <input type="text" [(ngModel)]="registerDetails.firstName"id="firstname">
+            </div>
+            <div>
+                <label for="lastname">Lastname</label>
+                <input type="text" [(ngModel)]="registerDetails.lastName"id="lastname">
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input type="phone" [(ngModel)]="registerDetails.phone"id="phone">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" [(ngModel)]="registerDetails.password"id="password">
+            </div>
+            <div>
+                <label for="password_confirm">Confirm Password</label>
+                <input type="password" [(ngModel)]="registerDetails.password_confirm " id="password_confirm">
+            </div>
+        </div>
+        <div style="display: flex; flex-direction:column; padding: 5px">
+            <button class="main_btn" (click)="createAccount()">Create Account</button>
+            <button class="other_btn" (click)="login_tab = !login_tab">Go to Login</button>
+        </div>
+    </div>
+</div>

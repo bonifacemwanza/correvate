@@ -1,0 +1,101 @@
+p{
+    margin-bottom:0;
+}
+.modal{
+    background: rgba(0, 0, 0, 0.615);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close_area{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+.modal_body{
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.input_fields{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.input_fields > div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+.form_fields label{
+    font-size: 15px;
+    color: #444;
+    margin: 5px 0;
+}
+.input_box{
+    border-radius: 0;
+    border:1px solid #f1f1f1;
+    background-color: #f9f9f9;
+    padding: 5px;
+    outline: none;
+    width: 100%;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.bottom_btn{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.bottom_btn > *{
+    width: 49%;
+    padding: 7px;
+    border: none;
+    border-radius: 0;
+    font-size: 13px;
+    cursor: pointer;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.bottom_btn > *:nth-child(1){
+    background-color: #ffc3a0;
+}
+.bottom_btn > *:nth-child(2){
+    background-color: #ffafbd;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 5px 0 5px 0;
+}
+.top button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.top p{
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+}

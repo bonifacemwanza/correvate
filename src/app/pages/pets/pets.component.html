@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="cards">
+        <div class="card" (click)="view(pet)" *ngFor="let pet of petData">
+            <img [src]="pet['photoUrls'][0]" alt="{{pet['name']}}" class="pet_image"/>
+            <div class="card_bottom">
+                <p class="pet_name">{{pet['name']}}</p>
+                <div class="status">
+                    <p>Category :</p>
+                    <p>{{pet['category']['name']}}</p>
+                </div>
+                <div class="status">
+                    <p>Status :</p>
+                    <p>{{pet['status']}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button [ngClass]="filter_data['name'] || filter_data['status'] || filter_data['category'] ? 'filter_btn_alt': 'filter_btn' " (click)="filter()">
+        <i class="material-icons" >filter_alt</i>
+    </button>
+</div>

@@ -1,0 +1,28 @@
+<div class="modal" >
+    <div (click)="close_modal()" class="close_area"></div>
+    <div class="modal_body">
+        <img src="{{data.photoUrls[num]}}" alt="{{data['name']}}" class="pet_image">
+        <div class="details">
+            <p class="pet_name">{{data['name']}}</p>
+            <div class="status">
+                <p>Category :</p>
+                <p>{{data['category']['name']}}</p>
+            </div>
+            <div class="status">
+                <p>Status :</p>
+                <p>{{data['status']}}</p>
+            </div>
+            <div class="images">
+                <div class="img" *ngFor="let image of data.photoUrls; let i=index;">
+                    <img [src]="image" [alt]="data['name']" (click)="num = i">
+                </div>
+            </div>
+            <p class="desc"><span *ngFor="let tag of data.tags">{{'#'+tag.name+' '}}</span> </p> 
+            <div class="bottom" *ngIf="profile">
+                <i class="material-icons" (click)="edit_pet(data['id'])">edit</i>
+                <i class="material-icons" (click)="delete_pet(data['id'])">delete</i>
+            </div>
+        </div>
+    </div>
+</div>
+

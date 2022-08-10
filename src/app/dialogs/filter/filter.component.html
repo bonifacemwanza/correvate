@@ -1,0 +1,35 @@
+<div class="modal">
+    <div class="close_area" (click)="close()"></div>
+    <div class="modal_body">
+        <div class="top">
+            <p>Filter</p>
+            <button  (click)="close()">
+                <i class="material-icons">close</i>
+            </button>
+        </div>
+        <div class="input_fields">
+            <div>
+                <label for="pet_name">Pet Name</label>
+                <input type="text" id="pet_name" class="input_box" [(ngModel)]="name">
+            </div>
+            <div>
+                <label for="pet_status">Category</label>
+                <select class="input_box" id="pet_status" [(ngModel)]="category">
+                    <option *ngFor="let Category of Categories" [value]="Category.name">{{Category.name}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="pet_status">Status</label>
+                <select name="" id="pet_status" class="input_box" [(ngModel)]="status">
+                    <option value="available">Available</option>
+                    <option value="pending">Pending</option>
+                    <option value="sold">Sold</option>
+                </select>
+            </div>
+        </div>
+        <div class="bottom_btn">
+            <button (click)="search()">Search</button>
+            <button (click)="clear_all()">Clear all</button>
+        </div>
+    </div>
+</div>
