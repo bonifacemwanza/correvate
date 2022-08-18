@@ -1,11 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Store, Select } from '@ngxs/store';
-import { Pet } from 'src/app/models/pet.model';
+import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
 import { PetState } from 'src/app/ngxs/state/state';
-import { Observable } from 'rxjs';
-import { DeletePet } from 'src/app/ngxs/actions/actions';
 
 @Component({
   selector: 'app-view',
@@ -14,10 +11,7 @@ import { DeletePet } from 'src/app/ngxs/actions/actions';
 })
 export class ViewComponent implements OnInit {
 
-  profile: any = {}
-  // constructor(private store: Store, private router: Router) {
-    
-  // }
+  profile: object = {}
 
   public num = 0
   constructor(
@@ -29,7 +23,6 @@ export class ViewComponent implements OnInit {
 
       this.store.select(PetState.getProfile).subscribe((res:any) => {
         this.profile = res
-        console.log(res)
       });
       
     }

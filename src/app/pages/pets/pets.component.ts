@@ -11,7 +11,7 @@ import {
   of,
 } from "rxjs";
 import { PetsService } from "./pets.service";
-import { DeletePet, FetchPets } from "src/app/ngxs/actions/actions";
+import { FetchPets } from "src/app/ngxs/actions/actions";
 import { FilterComponent } from "src/app/dialogs/filter/filter.component";
 import { BaseviewComponent } from "src/app/shared/baseview/baseview";
 
@@ -47,7 +47,7 @@ export class PetsComponent extends BaseviewComponent implements OnInit {
   }
 
   fetchPets(): void {
-    const getallPets$ = forkJoin([
+    const sub$ = forkJoin([
       this.petService.getPets("available"),
       this.petService.getPets("pending"),
       this.petService.getPets("sold"),
@@ -67,9 +67,9 @@ export class PetsComponent extends BaseviewComponent implements OnInit {
         })
       )
       .subscribe((data) => {
-        console.log(data)
         this.dispatchPetsToStore(data);
       });
+      this.subs.push(sub$);
   }
   dispatchPetsToStore(data: any) {
     let newArray: Array<object> = [];

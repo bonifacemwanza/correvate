@@ -11,14 +11,14 @@ export class FilterComponent implements OnInit {
   public Categories = Categories
 
   constructor(
-    public dialogRef: MatDialogRef<FilterComponent>, 
+    public dialogRef: MatDialogRef<FilterComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-    ) {
-    }
+  ) {
+  }
 
-  public name:string = ""
-  public category:string = ""
-  public status:string = ""
+  public name: string = ""
+  public category: string = ""
+  public status: string = ""
   ngOnInit(): void {
     this.name = this.data['name']
     this.status = this.data['status']
@@ -26,22 +26,22 @@ export class FilterComponent implements OnInit {
   }
 
 
-  clear_all(){
+  clear_all() {
     this.name = ""
     this.status = ""
     this.category = ""
   }
 
-  search(){
+  search() {
     let payload = {
-      name:this.name,
+      name: this.name,
       category: this.category,
-      status:this.status,
+      status: this.status,
     }
-    this.dialogRef.close({type:"search", data: payload});
+    this.dialogRef.close({ type: "search", data: payload });
   }
 
-  close(){
-    this.dialogRef.close({type:"close"});
+  close() {
+    this.dialogRef.close({ type: "close" });
   }
 }

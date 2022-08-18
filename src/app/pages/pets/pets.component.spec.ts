@@ -2,12 +2,11 @@ import { HttpTestingController, HttpClientTestingModule } from '@angular/common/
 import { NgModule } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Store, NgxsModule } from '@ngxs/store';
+import { NgxsModule } from '@ngxs/store';
 import { PetState } from 'src/app/ngxs/state/state';
-import { CreateServiceStub, PetServiceStub } from 'src/app/shared/helpers/pet.service.mock';
-import { CreateService } from '../create/create.service';
+import { PetServiceStub } from 'src/app/shared/helpers/pet.service.mock';
 
 import { PetsComponent } from './pets.component';
 import { PetsService } from './pets.service';
@@ -22,7 +21,6 @@ export const SOME_DESIRED_STATE: any = {
 describe('PetsComponent', () => {
   let component: PetsComponent;
   let fixture: ComponentFixture<PetsComponent>;
-  let store: Store;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ PetsComponent ],

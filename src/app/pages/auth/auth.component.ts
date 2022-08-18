@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Store } from "@ngxs/store";
-import { catchError, forkJoin, map, of, throwError } from "rxjs";
+import { catchError, forkJoin, map, of } from "rxjs";
 import {
   CreateProfile,
-  Profile,
   UserLogin,
 } from "src/app/models/proflie.model";
 import { Login } from "src/app/ngxs/actions/actions";
@@ -61,7 +60,6 @@ export class AuthComponent extends BaseviewComponent implements OnInit {
         ),
         map(([loginResponse, validationResponce]) => {
           let sessionId = '';
-          console.log(loginResponse, validationResponce)
           let isUserLogged = false;
           if (validationResponce && loginResponse) {
             sessionId = loginResponse.message.split(':')[1];
@@ -77,7 +75,6 @@ export class AuthComponent extends BaseviewComponent implements OnInit {
         }),
       )
       .subscribe((data) => {
-        console.log("login faile", data)
         this.validateLogin(data)
       }
       );
@@ -102,7 +99,7 @@ export class AuthComponent extends BaseviewComponent implements OnInit {
       this.api
         .createUser(this.registerDetails)
         .pipe()
-        .subscribe((data) => {
+        .subscribe(() => {
           this.login_tab = true;
         });
     }

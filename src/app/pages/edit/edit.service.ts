@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 export class EditService {
 
   private getPetEndpoint = '/pet'
-  private findByStatus = '/findByStatus'
   constructor(private http: HttpClient) { }
 
   updatePet(data:object):Observable<any>{

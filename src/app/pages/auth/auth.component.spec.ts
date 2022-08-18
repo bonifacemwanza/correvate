@@ -2,10 +2,9 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { NgModule } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgxsModule, Store } from '@ngxs/store';
-import { PetState, StateModel } from 'src/app/ngxs/state/state';
+import { PetState } from 'src/app/ngxs/state/state';
 import { AuthServiceStub } from 'src/app/shared/helpers/pet.service.mock';
 import { PetsComponent } from '../pets/pets.component';
 
